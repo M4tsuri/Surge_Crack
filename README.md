@@ -1,8 +1,10 @@
 ## [Surge v4](https://dl.nssurge.com/mac/v4/Surge-4.3.1-1461-829471a307259fe1729cf06a7cd13d06.zip) full crack.
 
-**FOR STUDY PURPOSES ONLY.**
+**仅学习用途，请勿挪作他用**
 
-敏感信息已模糊处理
+**FOR STUDY PURPOSES ONLY**
+
+**敏感信息已模糊处理**
 
 ### 基本类型
 
@@ -73,7 +75,7 @@ syscall::kill:entry
 
 1. patch一下，将SecCode检查过掉
 2. 对helper进行重签名，注意先使用lipo将help strip成单一架构的binary，否则codesign重签名后验证依然不通过（因为只签了当前架构的）
-3. 修改helper和主程序的Info.plist的`SMPrivilegedExecutables`域并重签名，直至使用 https://raw.githubusercontent.com/keybase/client/master/osx/Helper/SMJobBlessUtil.py 校验通过。
+3. 使用`codesign -d -r- path`命令查看helper和主程序的designated requirement，据此修改helper和主程序的Info.plist的`SMPrivilegedExecutables`域并重签名，直至使用 https://raw.githubusercontent.com/keybase/client/master/osx/Helper/SMJobBlessUtil.py 校验通过。
 
 破解结果如下，程序稳定运行：
 
